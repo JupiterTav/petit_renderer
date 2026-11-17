@@ -101,6 +101,7 @@ target_include_directories(stb INTERFACE ${stb_SOURCE_DIR})
 
 add_executable(tiny_renderer
     src/main.cpp
+    src/ImGuiUI.cpp
 )
 target_include_directories(tiny_renderer PRIVATE include)
 target_link_libraries(tiny_renderer PRIVATE
