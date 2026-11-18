@@ -1,0 +1,9 @@
+<map id="/home/wes_tav/Projects/petit_renderer/include/Camera.hpp" name="/home/wes_tav/Projects/petit_renderer/include/Camera.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="65,5,227,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,76,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,63,69,104,65,100,109,65"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="100,112,192,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,62,148,97,143,95,144,66"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="216,112,407,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="200,62,277,104,272,105,199,67"/>
+</map>

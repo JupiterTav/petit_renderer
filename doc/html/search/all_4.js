@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['renderer_0',['renderer',['../namespacerenderer.html',1,'']]],
-  ['renderercontext_1',['RendererContext',['../structrenderer_1_1RendererContext.html',1,'renderer']]],
-  ['renderercontext_2ehpp_2',['RendererContext.hpp',['../RendererContext_8hpp.html',1,'']]],
-  ['renderframe_3',['renderFrame',['../classui_1_1ImGuiUI.html#a47e10efb94facf410f6dd43e34c70d2b',1,'ui::ImGuiUI']]]
+  ['getviewmatrix_0',['getViewMatrix',['../classrenderer_1_1Camera.html#aa4e10f7bde25ae041a5d6b1979ba5367',1,'renderer::Camera']]],
+  ['glfwerrorcallback_1',['glfwErrorCallback',['../main_8cpp.html#a7f9c09fcd855cc9b01d97178ac5ca638',1,'main.cpp']]],
+  ['glfwmousecallback_2',['glfwMouseCallback',['../main_8cpp.html#ad6879cba3b8cebedf7227004e321595d',1,'main.cpp']]],
+  ['glfwscrollcallback_3',['glfwScrollCallback',['../main_8cpp.html#ae9f39cc90bde515429cb420bd36c7f74',1,'main.cpp']]]
 ];

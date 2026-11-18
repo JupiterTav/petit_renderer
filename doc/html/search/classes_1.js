@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['renderercontext_0',['RendererContext',['../structrenderer_1_1RendererContext.html',1,'renderer']]]
+  ['imguiui_0',['ImGuiUI',['../classui_1_1ImGuiUI.html',1,'ui']]]
 ];
