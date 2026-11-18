@@ -1,8 +1,22 @@
+/**
+ *  @file RAII wrapper to init, destroy, and render the imgui frame
+ *  @date 2026-11-17
+ *
+ */
+
 #include "ImGuiUI.hpp"
 
 #include <iostream>
-
 namespace ui {
+
+/**
+ *  @brief Constructor.
+ *  @param window -> application window.
+ *
+ *  Checks if the initialization fails or not.
+ *  Destroy it if failed to initialize
+ *  something
+ */
 ImGuiUI::ImGuiUI(GLFWwindow *window) {
   IMGUI_CHECKVERSION();
 
@@ -37,7 +51,11 @@ void ImGuiUI::newFrame() {
   ImGui::NewFrame();
 }
 
-void ImGuiUI::renderUpdate() {
+/**
+ * @brief Render the UI data of the frame.
+ * @return void
+ * */
+void ImGuiUI::renderFrame() {
   ImGui::Render();
   ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }

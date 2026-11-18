@@ -13,6 +13,6 @@ public:
   ~ImGuiUI();
 
   void newFrame();
-  void renderUpdate();
+  void renderFrame();
 };
 } // namespace ui

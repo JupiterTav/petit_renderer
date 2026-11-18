@@ -1,0 +1,144 @@
+\doxysection{/\+home/\+wes\+\_\+tav/\+\+Projects/\+petit\+\_\+renderer/\+src/\+main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{/home/wes\_tav/Projects/petit\_renderer/src/main.cpp@{/home/wes\_tav/Projects/petit\_renderer/src/main.cpp}}
+{\ttfamily \+\#include $<$glad/\+gl.\+h$>$}\newline
+{\ttfamily \+\#include $<$GLFW/\+glfw3.\+h$>$}\newline
+{\ttfamily \+\#include $<$glm/\+glm.\+hpp$>$}\newline
+{\ttfamily \+\#include "{}imgui.\+h"{}}\newline
+{\ttfamily \+\#include "{}imgui\+\_\+impl\+\_\+glfw.\+h"{}}\newline
+{\ttfamily \+\#include "{}imgui\+\_\+impl\+\_\+opengl3.\+h"{}}\newline
+{\ttfamily \+\#include "{}Im\+Gui\+UI.\+hpp"{}}\newline
+{\ttfamily \+\#include "{}Renderer\+Context.\+hpp"{}}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+Include dependency graph for main.\+cpp:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{main_8cpp_a7f9c09fcd855cc9b01d97178ac5ca638}{glfw\+Error\+Callback}} (int error, const char \texorpdfstring{$\ast$}{*}description)
+\item 
+void \doxymbox{\hyperlink{main_8cpp_ac51c2a18ed56b5799ce28849f82808bf}{im\+Gui\+Draw\+Frame}} (\doxymbox{\hyperlink{structrenderer_1_1RendererContext}{Renderer\+Context}} \&context)
+\begin{DoxyCompactList}\small\item\em Build the main menu of the application. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\+[$\,$]\+)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \doxymbox{\hyperlink{main_8cpp_a1a4ea27f9b84f4c2a6577f80d51ea998}{WINDOW\+\_\+\+WIDTH}} \{1920\}
+\item 
+constexpr int \doxymbox{\hyperlink{main_8cpp_a4653f29f655121ae7b57bc95ef27ad72}{WINDOW\+\_\+\+HEIGHT}} \{1080\}
+\end{DoxyCompactItemize}
+
+
+\label{main_8cpp_doc-func-members}
+\Hypertarget{main_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a7f9c09fcd855cc9b01d97178ac5ca638}\index{main.cpp@{main.cpp}!glfwErrorCallback@{glfwErrorCallback}}
+\index{glfwErrorCallback@{glfwErrorCallback}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{glfwErrorCallback()}{glfwErrorCallback()}}
+{\footnotesize\ttfamily \label{main_8cpp_a7f9c09fcd855cc9b01d97178ac5ca638} 
+void glfw\+Error\+Callback (\begin{DoxyParamCaption}\item[{int}]{error}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{description}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ std::fprintf(stderr,\ \textcolor{stringliteral}{"{}GLFW::Error::\%d:\ \%s\(\backslash\)n"{}},\ error,\ description);}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+\Hypertarget{main_8cpp_ac51c2a18ed56b5799ce28849f82808bf}\index{main.cpp@{main.cpp}!imGuiDrawFrame@{imGuiDrawFrame}}
+\index{imGuiDrawFrame@{imGuiDrawFrame}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{imGuiDrawFrame()}{imGuiDrawFrame()}}
+{\footnotesize\ttfamily \label{main_8cpp_ac51c2a18ed56b5799ce28849f82808bf} 
+void im\+Gui\+Draw\+Frame (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structrenderer_1_1RendererContext}{Renderer\+Context}} \&}]{context}{}\end{DoxyParamCaption})}
+
+
+
+Build the main menu of the application. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ ImGui::Begin(\textcolor{stringliteral}{"{}Petit\ Renderer"{}});}
+\DoxyCodeLine{00030\ \ \ ImGui::Text(\textcolor{stringliteral}{"{}OpenGL:\ \%s"{}},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(glGetString(GL\_VERSION)));}
+\DoxyCodeLine{00032\ \ \ ImGui::End();}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\+[$\,$]}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \doxymbox{\hyperlink{structrenderer_1_1RendererContext}{RendererContext}}\ context;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ glfwSetErrorCallback(\doxymbox{\hyperlink{main_8cpp_a7f9c09fcd855cc9b01d97178ac5ca638}{glfwErrorCallback}});}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordflow}{if}\ (glfwInit()\ ==\ GLFW\_FALSE)}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ glfwWindowHint(GLFW\_CONTEXT\_VERSION\_MAJOR,\ 3);}
+\DoxyCodeLine{00043\ \ \ glfwWindowHint(GLFW\_CONTEXT\_VERSION\_MINOR,\ 3);}
+\DoxyCodeLine{00044\ \ \ glfwWindowHint(GLFW\_OPENGL\_PROFILE,\ GLFW\_OPENGL\_CORE\_PROFILE);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ context.\doxymbox{\hyperlink{structrenderer_1_1RendererContext_aaee611755977ff6e3a4d40f6eeb7681e}{window}}\ =\ glfwCreateWindow(\doxymbox{\hyperlink{main_8cpp_a1a4ea27f9b84f4c2a6577f80d51ea998}{WINDOW\_WIDTH}},\ \doxymbox{\hyperlink{main_8cpp_a4653f29f655121ae7b57bc95ef27ad72}{WINDOW\_HEIGHT}},}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Petit\ Renderer"{}},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordflow}{if}\ (!context.\doxymbox{\hyperlink{structrenderer_1_1RendererContext_aaee611755977ff6e3a4d40f6eeb7681e}{window}})\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ glfwTerminate();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00051\ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ glfwMakeContextCurrent(context.\doxymbox{\hyperlink{structrenderer_1_1RendererContext_aaee611755977ff6e3a4d40f6eeb7681e}{window}});}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordflow}{if}\ (gladLoadGL(\textcolor{keyword}{reinterpret\_cast<}GLADloadfunc\textcolor{keyword}{>}(glfwGetProcAddress))\ ==}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ GLFW\_FALSE)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ std::fprintf(stderr,\ \textcolor{stringliteral}{"{}Failed\ to\ load\ OpenGL\ functions\(\backslash\)n"{}});}
+\DoxyCodeLine{00057\ \ \ \ \ glfwDestroyWindow(context.\doxymbox{\hyperlink{structrenderer_1_1RendererContext_aaee611755977ff6e3a4d40f6eeb7681e}{window}});}
+\DoxyCodeLine{00058\ \ \ \ \ glfwTerminate();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00060\ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \doxymbox{\hyperlink{classui_1_1ImGuiUI}{ImGuiUI}}\ \doxymbox{\hyperlink{namespaceui}{ui}}(context.\doxymbox{\hyperlink{structrenderer_1_1RendererContext_aaee611755977ff6e3a4d40f6eeb7681e}{window}});}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordflow}{while}\ (!glfwWindowShouldClose(context.\doxymbox{\hyperlink{structrenderer_1_1RendererContext_aaee611755977ff6e3a4d40f6eeb7681e}{window}}))\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ glfwPollEvents();}
+\DoxyCodeLine{00065\ \ \ \ \ \doxymbox{\hyperlink{namespaceui}{ui}}.newFrame();}
+\DoxyCodeLine{00066\ \ \ \ \ \doxymbox{\hyperlink{main_8cpp_ac51c2a18ed56b5799ce28849f82808bf}{imGuiDrawFrame}}(context);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \doxymbox{\hyperlink{namespaceui}{ui}}.renderFrame();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ glfwSwapBuffers(context.\doxymbox{\hyperlink{structrenderer_1_1RendererContext_aaee611755977ff6e3a4d40f6eeb7681e}{window}});}
+\DoxyCodeLine{00073\ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ glfwDestroyWindow(context.\doxymbox{\hyperlink{structrenderer_1_1RendererContext_aaee611755977ff6e3a4d40f6eeb7681e}{window}});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00078\ \}}
+
+\end{DoxyCode}
+
+
+\label{main_8cpp_doc-var-members}
+\Hypertarget{main_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8cpp_a4653f29f655121ae7b57bc95ef27ad72}\index{main.cpp@{main.cpp}!WINDOW\_HEIGHT@{WINDOW\_HEIGHT}}
+\index{WINDOW\_HEIGHT@{WINDOW\_HEIGHT}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{WINDOW\_HEIGHT}{WINDOW\_HEIGHT}}
+{\footnotesize\ttfamily \label{main_8cpp_a4653f29f655121ae7b57bc95ef27ad72} 
+int WINDOW\+\_\+\+HEIGHT \{1080\}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\Hypertarget{main_8cpp_a1a4ea27f9b84f4c2a6577f80d51ea998}\index{main.cpp@{main.cpp}!WINDOW\_WIDTH@{WINDOW\_WIDTH}}
+\index{WINDOW\_WIDTH@{WINDOW\_WIDTH}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{WINDOW\_WIDTH}{WINDOW\_WIDTH}}
+{\footnotesize\ttfamily \label{main_8cpp_a1a4ea27f9b84f4c2a6577f80d51ea998} 
+int WINDOW\+\_\+\+WIDTH \{1920\}\hspace{0.3cm}{\ttfamily [constexpr]}}
+

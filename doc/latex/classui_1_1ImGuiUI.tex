@@ -1,0 +1,130 @@
+\doxysection{ui::Im\+Gui\+UI Class Reference}
+\hypertarget{classui_1_1ImGuiUI}{}\label{classui_1_1ImGuiUI}\index{ui::ImGuiUI@{ui::ImGuiUI}}
+
+
+{\ttfamily \+\#include $<$Im\+Gui\+UI.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classui_1_1ImGuiUI_abd3172f1e8af02df5da34da57af5c760}{Im\+Gui\+UI}} (GLFWwindow \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classui_1_1ImGuiUI_a87657e26ee8da61c53760f2c1c65cfe5}{\texorpdfstring{$\sim$}{\string~}\+Im\+Gui\+UI}} ()
+\item 
+void \doxymbox{\hyperlink{classui_1_1ImGuiUI_a7dd9a6379041afa9346f0dcebb6ecf1f}{new\+Frame}} ()
+\item 
+void \doxymbox{\hyperlink{classui_1_1ImGuiUI_a47e10efb94facf410f6dd43e34c70d2b}{render\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em Render the UI data of the frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{classui_1_1ImGuiUI_doc-constructors}
+\Hypertarget{classui_1_1ImGuiUI_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classui_1_1ImGuiUI_abd3172f1e8af02df5da34da57af5c760}\index{ui::ImGuiUI@{ui::ImGuiUI}!ImGuiUI@{ImGuiUI}}
+\index{ImGuiUI@{ImGuiUI}!ui::ImGuiUI@{ui::ImGuiUI}}
+\doxysubsubsection{\texorpdfstring{ImGuiUI()}{ImGuiUI()}}
+{\footnotesize\ttfamily \label{classui_1_1ImGuiUI_abd3172f1e8af02df5da34da57af5c760} 
+ui::\+\+Im\+Gui\+UI::\+\+Im\+Gui\+UI (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & -\/\texorpdfstring{$>$}{>} application window.\\
+\hline
+\end{DoxyParams}
+Checks if the initialization fails or not. Destroy it if failed to initialize something 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ IMGUI\_CHECKVERSION();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordflow}{if}\ (ImGui::CreateContext()\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ std::fprintf(stderr,\ \textcolor{stringliteral}{"{}Failed\ to\ ImGui\ Create\ Context"{}});}
+\DoxyCodeLine{00025\ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ ImGuiIO\ \&io\ =\ ImGui::GetIO();}
+\DoxyCodeLine{00028\ \ \ io.ConfigFlags\ |=}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ ImGuiConfigFlags\_NavEnableKeyboard;\ \textcolor{comment}{//\ Enable\ Keyboard\ Controls}}
+\DoxyCodeLine{00030\ \ \ io.ConfigFlags\ |=\ ImGuiConfigFlags\_NavEnableGamepad;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ ImGui::StyleColorsDark();}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordflow}{if}\ (!ImGui\_ImplGlfw\_InitForOpenGL(window,\ \textcolor{keyword}{true}))\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ std::fprintf(stderr,\ \textcolor{stringliteral}{"{}Failed\ to\ initialize\ ImGui\ GLFW\ backend"{}});}
+\DoxyCodeLine{00035\ \ \ \ \ glfwDestroyWindow(window);}
+\DoxyCodeLine{00036\ \ \ \ \ glfwTerminate();}
+\DoxyCodeLine{00037\ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordflow}{if}\ (!ImGui\_ImplOpenGL3\_Init(\textcolor{stringliteral}{"{}\#version\ 330\ core"{}}))\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ std::fprintf(stderr,\ \textcolor{stringliteral}{"{}Failed\ to\ initialize\ ImGui\ OpenGL"{}});}
+\DoxyCodeLine{00041\ \ \ \ \ ImGui\_ImplGlfw\_Shutdown();}
+\DoxyCodeLine{00042\ \ \ \ \ ImGui::DestroyContext();}
+\DoxyCodeLine{00043\ \ \ \ \ glfwDestroyWindow(window);}
+\DoxyCodeLine{00044\ \ \ \ \ glfwTerminate();}
+\DoxyCodeLine{00045\ \ \ \}}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classui_1_1ImGuiUI_a87657e26ee8da61c53760f2c1c65cfe5}\index{ui::ImGuiUI@{ui::ImGuiUI}!````~ImGuiUI@{\texorpdfstring{$\sim$}{\string~}ImGuiUI}}
+\index{````~ImGuiUI@{\texorpdfstring{$\sim$}{\string~}ImGuiUI}!ui::ImGuiUI@{ui::ImGuiUI}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ImGuiUI()}{\string~ImGuiUI()}}
+{\footnotesize\ttfamily \label{classui_1_1ImGuiUI_a87657e26ee8da61c53760f2c1c65cfe5} 
+ui::\+\+Im\+Gui\+UI::\+\texorpdfstring{$\sim$}{\string~}\+Im\+Gui\+UI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ ImGui\_ImplOpenGL3\_Shutdown();}
+\DoxyCodeLine{00065\ \ \ ImGui\_ImplGlfw\_Shutdown();}
+\DoxyCodeLine{00066\ \ \ ImGui::DestroyContext();}
+\DoxyCodeLine{00067\ \}}
+
+\end{DoxyCode}
+
+
+\label{classui_1_1ImGuiUI_doc-func-members}
+\Hypertarget{classui_1_1ImGuiUI_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classui_1_1ImGuiUI_a7dd9a6379041afa9346f0dcebb6ecf1f}\index{ui::ImGuiUI@{ui::ImGuiUI}!newFrame@{newFrame}}
+\index{newFrame@{newFrame}!ui::ImGuiUI@{ui::ImGuiUI}}
+\doxysubsubsection{\texorpdfstring{newFrame()}{newFrame()}}
+{\footnotesize\ttfamily \label{classui_1_1ImGuiUI_a7dd9a6379041afa9346f0dcebb6ecf1f} 
+void ui::\+\+Im\+Gui\+UI::\+new\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ ImGui\_ImplOpenGL3\_NewFrame();}
+\DoxyCodeLine{00050\ \ \ ImGui\_ImplGlfw\_NewFrame();}
+\DoxyCodeLine{00051\ \ \ ImGui::NewFrame();}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classui_1_1ImGuiUI_a47e10efb94facf410f6dd43e34c70d2b}\index{ui::ImGuiUI@{ui::ImGuiUI}!renderFrame@{renderFrame}}
+\index{renderFrame@{renderFrame}!ui::ImGuiUI@{ui::ImGuiUI}}
+\doxysubsubsection{\texorpdfstring{renderFrame()}{renderFrame()}}
+{\footnotesize\ttfamily \label{classui_1_1ImGuiUI_a47e10efb94facf410f6dd43e34c70d2b} 
+void ui::\+\+Im\+Gui\+UI::\+render\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Render the UI data of the frame. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ ImGui::Render();}
+\DoxyCodeLine{00060\ \ \ ImGui\_ImplOpenGL3\_RenderDrawData(ImGui::GetDrawData());}
+\DoxyCodeLine{00061\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/\+home/\+wes\+\_\+tav/\+\+Projects/\+petit\+\_\+renderer/\+include/\doxymbox{\hyperlink{ImGuiUI_8hpp}{Im\+Gui\+UI.\+hpp}}\item 
+/\+home/\+wes\+\_\+tav/\+\+Projects/\+petit\+\_\+renderer/\+src/\doxymbox{\hyperlink{ImGuiUI_8cpp}{Im\+Gui\+UI.\+cpp}}\end{DoxyCompactItemize}

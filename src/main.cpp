@@ -22,6 +22,9 @@ void glfwErrorCallback(int error, const char *description) {
   std::fprintf(stderr, "GLFW::Error::%d: %s\n", error, description);
 }
 
+/**
+ *  @brief Build the main menu of the application
+ * */
 void imGuiDrawFrame(RendererContext &context) {
   ImGui::Begin("Petit Renderer");
   ImGui::Text("OpenGL: %s",
@@ -64,7 +67,7 @@ int main(int argc, char *argv[]) {
 
     glClear(GL_COLOR_BUFFER_BIT);
 
-    ui.renderUpdate();
+    ui.renderFrame();
 
     glfwSwapBuffers(context.window);
   }
